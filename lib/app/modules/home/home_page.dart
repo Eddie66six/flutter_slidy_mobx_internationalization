@@ -12,8 +12,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
   alterLocale(){
-    setState(() {
-      CustomLocalizations.of(context).load(Locale('tr', 'TR'));
+    CustomLocalizations.of(context).load(Locale('tr', 'TR')).then((bool ok){
+        if(ok){
+          setState(() {});
+        }
     });
   }
 
