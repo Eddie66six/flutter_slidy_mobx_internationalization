@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_slidy_mobx/app/componens/g2x_bottom_menu/g2x_bottom_menu_widget.dart';
-import 'package:flutter_slidy_mobx/app/componens/g2x_bottom_menu/models/g2x_bottom_menu.model.dart';
+import 'package:flutter_slidy_mobx/app/components/g2x_bottom_menu/g2x_bottom_menu_widget.dart';
+import 'package:flutter_slidy_mobx/app/components/g2x_bottom_menu/models/g2x_bottom_menu_item_model.dart';
 import 'package:flutter_slidy_mobx/app/localization.dart';
 
 import 'home_controller.dart';
@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<G2xBottomMenu> menus;
+  List<G2xBottomMenuItemModel> menus;
   alterLocale(){
     CustomLocalizations.of(context).load(Locale('tr', 'TR')).then((bool ok){
         if(ok){
@@ -26,9 +26,9 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    menus = List<G2xBottomMenu>();
+    menus = List<G2xBottomMenuItemModel>();
     for (var i = 0; i < 4; i++) {
-      menus.add(G2xBottomMenu(i,Icons.ac_unit, "titulo " + i.toString()));
+      menus.add(G2xBottomMenuItemModel(i, "titulo " + i.toString(), Icons.ac_unit, i == 0));
     }
   }
 
