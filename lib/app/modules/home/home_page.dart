@@ -3,6 +3,8 @@ import 'package:flutter_slidy_mobx/app/componens/g2x_bottom_menu/g2x_bottom_menu
 import 'package:flutter_slidy_mobx/app/componens/g2x_bottom_menu/models/g2x_bottom_menu.model.dart';
 import 'package:flutter_slidy_mobx/app/localization.dart';
 
+import 'home_controller.dart';
+
 class HomePage extends StatefulWidget {
   final String title;
   const HomePage({Key key, this.title = "Home"}) : super(key: key);
@@ -30,6 +32,8 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  var controller = HomeController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +46,7 @@ class _HomePageState extends State<HomePage> {
             child: Text("click"),
             onPressed: alterLocale,
           ),
-          G2xBottomMenuWidget(menus)
+          G2xBottomMenuWidget(menus, controller.menuClick)
         ],
       ),
     );

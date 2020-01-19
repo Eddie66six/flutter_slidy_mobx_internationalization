@@ -12,4 +12,9 @@ abstract class _HomeBase with Store {
   void increment() {
     value++;
   }
+
+  @action
+  void menuClick(int idMenu) {
+    print(idMenu);
+  }
 }

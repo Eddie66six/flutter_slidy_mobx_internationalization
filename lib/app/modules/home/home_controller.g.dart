@@ -37,4 +37,14 @@ mixin _$HomeController on _HomeBase, Store {
       _$_HomeBaseActionController.endAction(_$actionInfo);
     }
   }
+
+  @override
+  void menuClick(int idMenu) {
+    final _$actionInfo = _$_HomeBaseActionController.startAction();
+    try {
+      return super.menuClick(idMenu);
+    } finally {
+      _$_HomeBaseActionController.endAction(_$actionInfo);
+    }
+  }
 }
