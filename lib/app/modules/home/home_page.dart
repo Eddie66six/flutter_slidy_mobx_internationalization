@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidy_mobx/app/components/g2x_bottom_menu/g2x_bottom_menu_widget.dart';
 import 'package:flutter_slidy_mobx/app/components/g2x_bottom_menu/models/g2x_bottom_menu_item_model.dart';
+import 'package:flutter_slidy_mobx/app/components/g2x_buttom/g2x_buttom_widget.dart';
 import 'package:flutter_slidy_mobx/app/localization.dart';
 
 import 'home_controller.dart';
@@ -32,6 +33,10 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  void click(){
+    print("click");
+  }
+
   var controller = HomeController();
 
   @override
@@ -46,7 +51,8 @@ class _HomePageState extends State<HomePage> {
             child: Text("click"),
             onPressed: alterLocale,
           ),
-          G2xBottomMenuWidget(menus, controller.menuClick)
+          G2xBottomMenuWidget(menus, controller.menuClick),
+          G2xButtomWidget(click, "exemplo click", Colors.green)
         ],
       ),
     );
