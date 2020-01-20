@@ -6,7 +6,7 @@ import 'package:flutter_slidy_mobx/app/components/g2x_buttom/g2x_buttom_widget.d
 
 main() {
   testWidgets('G2xButtomWidget has message', (WidgetTester tester) async {
-    await tester.pumpWidget(buildTestableWidget(G2xButtomWidget()));
+    await tester.pumpWidget(buildTestableWidget(G2xButtomWidget((){}, "", Colors.red)));
     final textFinder = find.text('G2xButtom');
     expect(textFinder, findsOneWidget);
   });

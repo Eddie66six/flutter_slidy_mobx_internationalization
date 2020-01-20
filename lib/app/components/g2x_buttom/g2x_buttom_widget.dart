@@ -5,6 +5,7 @@ class G2xButtomWidget extends StatelessWidget {
   final String text;
   final Color color;
   const G2xButtomWidget(this.click, this.text, this.color);
+
   @override
   Widget build(BuildContext context) {
     return Material(
